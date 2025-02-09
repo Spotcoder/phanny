@@ -122,33 +122,63 @@
 
   <script>
     // Initialize EmailJS with your User ID
-    (function() {
-      emailjs.init("SeyEF_dWDuxscBzST"); // Replace with your EmailJS User ID
-    })();
+   (function() {
+  emailjs.init("SeyEF_dWDuxscBzST"); // Replace with your EmailJS User ID
+})();
 
-    // Form submission handler
-    function sendEmail(event) {
-      event.preventDefault(); // Prevent form from submitting normally
+function sendEmail(event) {
+  event.preventDefault(); // Prevent form from submitting normally
 
-      const form = document.getElementById('email-form');
-      const formData = new FormData(form);
+  const form = document.getElementById('email-form');
+  const formData = new FormData(form);
 
-      // Convert form data into an object
-      const formObject = {};
-      formData.forEach((value, key) => {
-        formObject[key] = value;
-      });
+  // Convert form data into an object
+  const formObject = {};
+  formData.forEach((value, key) => {
+    formObject[key] = value;
+  });
 
-      // Send the form data to EmailJS
-      emailjs.send("service_usrwcc2", "template_26h8yki", formObject)
-        .then(function(response) {
-          console.log("Email sent successfully:", response);
-          alert("Your email has been sent!");
-        }, function(error) {
-          console.error("Error sending email:", error);
-          alert("There was an error sending your email. Please try again.");
-        });
-    }
+  // Map all the fields (Field 1 through Field 24)
+  const emailData = {
+    field_1: formObject["1"],  // Field 1
+    field_2: formObject["2"],  // Field 2
+    field_3: formObject["3"],  // Field 3
+    field_4: formObject["4"],  // Field 4
+    field_5: formObject["5"],  // Field 5
+    field_6: formObject["6"],  // Field 6
+    field_7: formObject["7"],  // Field 7
+    field_8: formObject["8"],  // Field 8
+    field_9: formObject["9"],  // Field 9
+    field_10: formObject["10"], // Field 10
+    field_11: formObject["11"], // Field 11
+    field_12: formObject["12"], // Field 12
+    field_13: formObject["13"], // Field 13
+    field_14: formObject["14"], // Field 14
+    field_15: formObject["15"], // Field 15
+    field_16: formObject["16"], // Field 16
+    field_17: formObject["17"], // Field 17
+    field_18: formObject["18"], // Field 18
+    field_19: formObject["19"], // Field 19
+    field_20: formObject["20"], // Field 20
+    field_21: formObject["21"], // Field 21
+    field_22: formObject["22"], // Field 22
+    field_23: formObject["23"], // Field 23
+    field_24: formObject["24"], // Field 24
+  };
+
+  // Debug: Log the email data to check if it's mapped correctly
+  console.log(emailData);
+
+  // Send the form data to EmailJS
+  emailjs.send("service_usrwcc2", "template_26h8yki", emailData)
+    .then(function(response) {
+      console.log("Email sent successfully:", response);
+      alert("Your email has been sent!");
+    }, function(error) {
+      console.error("Error sending email:", error);
+      alert("There was an error sending your email. Please try again.");
+    });
+}
   </script>
           <div class="w-form-done">
             <div>Thank you! Your submission has been received!</div>
