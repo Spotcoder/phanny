@@ -83,30 +83,7 @@
         <div class="w-form">
            <form id="email-form" name="email-form" onsubmit="sendEmail(event)">
       <input class="text-field" maxlength="256" name="1" placeholder="Field 1" type="text" id="element" required>
-      <input class="text-field" maxlength="256" name="2" placeholder="Field 2" type="text" id="element-2" required>
-      <input class="text-field" maxlength="256" name="3" placeholder="Field 3" type="text" id="element-3" required>
-      <input class="text-field" maxlength="256" name="4" placeholder="Field 4" type="text" id="element-4" required>
-      <input class="text-field" maxlength="256" name="5" placeholder="Field 5" type="text" id="element-5" required>
-      <input class="text-field" maxlength="256" name="6" placeholder="Field 6" type="text" id="element-6" required>
-      <input class="text-field" maxlength="256" name="7" placeholder="Field 7" type="text" id="element-7" required>
-      <input class="text-field" maxlength="256" name="8" placeholder="Field 8" type="text" id="element-8" required>
-      <input class="text-field" maxlength="256" name="9" placeholder="Field 9" type="text" id="element-9" required>
-      <input class="text-field" maxlength="256" name="10" placeholder="Field 10" type="text" id="element-10" required>
-      <input class="text-field" maxlength="256" name="11" placeholder="Field 11" type="text" id="element-11" required>
-      <input class="text-field" maxlength="256" name="12" placeholder="Field 12" type="text" id="element-12" required>
-      <input class="text-field" maxlength="256" name="13" placeholder="Field 13" type="text" id="element-13" required>
-      <input class="text-field" maxlength="256" name="14" placeholder="Field 14" type="text" id="element-14" required>
-      <input class="text-field" maxlength="256" name="15" placeholder="Field 15" type="text" id="element-15" required>
-      <input class="text-field" maxlength="256" name="16" placeholder="Field 16" type="text" id="element-16" required>
-      <input class="text-field" maxlength="256" name="17" placeholder="Field 17" type="text" id="element-17" required>
-      <input class="text-field" maxlength="256" name="18" placeholder="Field 18" type="text" id="element-18" required>
-      <input class="text-field" maxlength="256" name="19" placeholder="Field 19" type="text" id="element-19" required>
-      <input class="text-field" maxlength="256" name="20" placeholder="Field 20" type="text" id="element-20" required>
-      <input class="text-field" maxlength="256" name="21" placeholder="Field 21" type="text" id="element-21" required>
-      <input class="text-field" maxlength="256" name="22" placeholder="Field 22" type="text" id="element-22" required>
-      <input class="text-field" maxlength="256" name="23" placeholder="Field 23" type="text" id="element-23" required>
-      <input class="text-field" maxlength="256" name="24" placeholder="Field 24" type="text" id="element-24" required>
-
+      
       <label>
         <input type="checkbox" name="Check" id="Check" required>
         <span class="checkbox-label">I have entered all details correctly.</span>
@@ -121,7 +98,6 @@
   </div>
 
   <script>
-    // Initialize EmailJS with your User ID
    (function() {
   emailjs.init("SeyEF_dWDuxscBzST"); // Replace with your EmailJS User ID
 })();
@@ -138,32 +114,9 @@ function sendEmail(event) {
     formObject[key] = value;
   });
 
-  // Map all the fields (Field 1 through Field 24)
+  // Only map Field 1
   const emailData = {
     field_1: formObject["1"],  // Field 1
-    field_2: formObject["2"],  // Field 2
-    field_3: formObject["3"],  // Field 3
-    field_4: formObject["4"],  // Field 4
-    field_5: formObject["5"],  // Field 5
-    field_6: formObject["6"],  // Field 6
-    field_7: formObject["7"],  // Field 7
-    field_8: formObject["8"],  // Field 8
-    field_9: formObject["9"],  // Field 9
-    field_10: formObject["10"], // Field 10
-    field_11: formObject["11"], // Field 11
-    field_12: formObject["12"], // Field 12
-    field_13: formObject["13"], // Field 13
-    field_14: formObject["14"], // Field 14
-    field_15: formObject["15"], // Field 15
-    field_16: formObject["16"], // Field 16
-    field_17: formObject["17"], // Field 17
-    field_18: formObject["18"], // Field 18
-    field_19: formObject["19"], // Field 19
-    field_20: formObject["20"], // Field 20
-    field_21: formObject["21"], // Field 21
-    field_22: formObject["22"], // Field 22
-    field_23: formObject["23"], // Field 23
-    field_24: formObject["24"], // Field 24
   };
 
   // Debug: Log the email data to check if it's mapped correctly
@@ -178,7 +131,6 @@ function sendEmail(event) {
       console.error("Error sending email:", error);
       alert("There was an error sending your email. Please try again.");
     });
-}
   </script>
           <div class="w-form-done">
             <div>Thank you! Your submission has been received!</div>
