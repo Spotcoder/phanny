@@ -4166,6 +4166,7 @@ figcaption {
   }
 
   .nav-menu-two {
+    display:none;
     border-radius: 20px;
     flex-direction: column;
     padding-bottom: 30px;
